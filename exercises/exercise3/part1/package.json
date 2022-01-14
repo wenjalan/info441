@@ -1,0 +1,17 @@
+{
+  "name": "part1",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "node-fetch": "^3.1.0",
+    "node-html-parser": "^5.2.0"
+  }
+}
