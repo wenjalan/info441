@@ -81,3 +81,37 @@ In `package.json`, you can define custom scripts under the scripts tag. A common
 
 ### Express Starter
 Kyle made a template repo in the 441 files. It is a standard express template server converted to a module.
+
+## 4.2 - Deployment, In Theory
+In the old days, we ran servers off our own computers. The computer had to be on all the time, and you had to use your own internet connection. You had full control over your website but also is completely unscalable.  
+
+Next there were dedicated servers. These were servers thats only job was to run that program. You had to manage it, but someone else managed the internet connection. Sometimes the code works on your computer but not on the server. Also you paid for the server.  
+
+Then there were virtual machines. Same server setup, but multiple programs shared a given computer, and resources were allocated depending on the demand of each program. Cheaper, but slower to load, and space is spend on duplicate operating systems. This is pretty much where we are today.
+
+## 4.3 - Heroku
+Heroku is a service that allows you to have a VM for free for a limited amount of time. The paid service allows you to run a machine forever and have a custom domain.
+
+### Create Heroku App
+Download the Heroku CLI, and initialize a new Heroku project inside of a Git repo with the command `heroku create`.
+
+``` $ heroku create```
+
+Heroku will prompt you to log in if you haven't. Make sure your project has a `start` script defined in `package.json`. Heroku will use the `npm start` command to run your app.
+
+When running on Heroku, the port of your express server will need to be retrieved from the environment.
+
+```js
+// returns process.env.PORT if it is defined, or 3000
+const PORT = process.env.PORT || 3000;
+```
+
+Push your app to Heroku using the following Git command.
+
+``` $ git push heroku main ```
+
+Alternatively:
+
+``` $ git push heroku master ```
+
+To find out what you ultimately messed up, use the command `heroku log` to find out your errors.
